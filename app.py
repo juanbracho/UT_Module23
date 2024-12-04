@@ -6,7 +6,8 @@ import plotly.graph_objects as go
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
 import os
 
 app = Flask(__name__)
@@ -51,17 +52,23 @@ def results():
     # Extract features and scale them
     features = ['7-day MA', '14-day MA', 'Volatility', 'Lag_1', 'Lag_2']
     X = scaler.transform(data[features])
+    y = data['Adj Close']
 
     # Predict
-    data['Predicted Adj Close'] = model.predict(X)
+    y_pred = model.predict(X)
+
+    # Calculate evaluation metrics
+    mae = mean_absolute_error(y, y_pred)
+    mse = mean_squared_error(y, y_pred)
+    r2 = r2_score(y, y_pred)
 
     # Generate visualizations using Plotly
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=data['Date'], y=data['Adj Close'], mode='lines', name='Actual Prices'))
-    fig.add_trace(go.Scatter(x=data['Date'], y=data['Predicted Adj Close'], mode='lines', name='Predicted Prices'))
+    fig.add_trace(go.Scatter(x=data['Date'], y=y_pred, mode='lines', name='Predicted Prices'))
     graph = fig.to_html(full_html=False)
 
-    return render_template('results.html', ticker=ticker, graph=graph)
+    return render_template('results.html', ticker=ticker, mae=mae, mse=mse, r2=r2, graph=graph)
 
 def train_ticker_model(ticker):
     """
@@ -108,6 +115,14 @@ def train_ticker_model(ticker):
     print(f"Model and scaler saved for {ticker}.")
 
     return model, scaler
+
+@app.route('/about')
+def about():
+    """
+    Renders the About page (about.html).
+    """
+    return render_template('about.html')
+
 
 # Ensure the app runs properly
 if __name__ == '__main__':

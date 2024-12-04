@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Price Prediction</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Stock Price Prediction</h1>
-    <form action="/results" method="POST">
-        <label for="ticker">Select Ticker:</label>
-        <select name="ticker" id="ticker">
-            {% for ticker in tickers %}
-                <option value="{{ ticker }}" {% if ticker == default_ticker %}selected{% endif %}>{{ ticker }}</option>
-            {% endfor %}
-        </select>
-        <button type="submit">Submit</button>
-    </form>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Stock Predictor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Stock Price Prediction</h1>
+        <p class="text-center">
+            Select a stock ticker from the dropdown below and click "Submit" to see predicted stock prices.
+        </p>
+        <form action="/results" method="POST" class="mt-4">
+            <div class="mb-3">
+                <label for="ticker" class="form-label">Select Ticker:</label>
+                <select name="ticker" id="ticker" class="form-select">
+                    {% for ticker in tickers %}
+                        <option value="{{ ticker }}" {% if ticker == default_ticker %}selected{% endif %}>
+                            {{ ticker }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>Stock Predictor &copy; 2023 | Built with Flask and Bootstrap</p>
+    </footer>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
