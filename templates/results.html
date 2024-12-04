@@ -29,29 +29,43 @@
     <div class="container mt-5">
         <h1 class="text-center">Results for {{ ticker }}</h1>
         
-        <!-- Metrics Section -->
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <h5>Model Evaluation Metrics</h5>
-                <ul class="list-group">
-                    <li class="list-group-item">Mean Absolute Error (MAE): {{ mae }}</li>
-                    <li class="list-group-item">Mean Squared Error (MSE): {{ mse }}</li>
-                    <li class="list-group-item">R-squared (R²): {{ r2 }}</li>
+        <!-- Metrics and Graphs Section -->
+        <div class="row align-items-start mt-4">
+            <!-- Metrics Section -->
+            <div class="col-12 text-center col-lg-12 mb-4">
+                <h5 class="text-center">Model Evaluation Metrics</h5>
+                <ul class="list-group d-inline-block text-left">
+                    <li class="list-group-item"><strong>Mean Absolute Error (MAE):</strong> {{ mae }}</li>
+                    <li class="list-group-item"><strong>Mean Squared Error (MSE):</strong> {{ mse }}</li>
+                    <li class="list-group-item"><strong>R-squared (R²):</strong> {{ r2 }}</li>
                 </ul>
             </div>
-            <div class="col-md-8">
-                <!-- Graph Display -->
-                <div>
-                    {{ graph|safe }}
-                </div>
+        </div>
+    
+        <!-- Graph Section -->
+        <div class="graph-container">
+            <div class="graph-section">
+                <h5 class="text-center">Actual vs Predicted Prices</h5>
+                <p>This plot shows the comparison between the actual and predicted stock prices over time. The closer the predicted line is to the actual line, the better the model's performance.</p>
+                {{ graph1|safe }}
+            </div>
+            <div class="graph-section">
+                <h5 class="text-center">Residuals Distribution</h5>
+                <p>The residuals are the differences between the actual and predicted prices. A normal distribution around zero indicates good model performance.</p>
+                {{ graph2|safe }}
+            </div>
+            <div class="graph-section">
+                <h5 class="text-center">Residuals vs Predicted Prices</h5>
+                <p>This scatter plot shows if there are any patterns in the residuals with respect to the predicted prices. Random distribution indicates no bias in the model.</p>
+                {{ graph3|safe }}
             </div>
         </div>
-
+        
         <!-- Back Button -->
         <div class="text-center mt-4">
             <a href="/" class="btn btn-primary">Go Back</a>
         </div>
-    </div>
+    </div>    
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-5">

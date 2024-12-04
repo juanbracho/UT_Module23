@@ -19,13 +19,6 @@ MODELS_PATH = 'models/'
 # Default ticker
 DEFAULT_TICKER = 'XOM'
 
-app = Flask(__name__, static_url_path='/static', static_folder='static')
-
-# Route to serve static files
-@app.route('/static/<path:filename>')
-def serve_static(filename):
-    return send_from_directory(app.static_folder, filename)
-
 @app.route('/')
 def index():
     # Fetch available tickers from the database
@@ -69,13 +62,36 @@ def results():
     mse = mean_squared_error(y, y_pred)
     r2 = r2_score(y, y_pred)
 
-    # Generate visualizations using Plotly
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=data['Date'], y=data['Adj Close'], mode='lines', name='Actual Prices'))
-    fig.add_trace(go.Scatter(x=data['Date'], y=y_pred, mode='lines', name='Predicted Prices'))
-    graph = fig.to_html(full_html=False)
+     # Generate visualizations using Plotly
+    # Visualization 1: Actual vs Predicted Prices
+    fig1 = go.Figure()
+    fig1.add_trace(go.Scatter(x=data['Date'], y=data['Adj Close'], mode='lines', name='Actual Prices'))
+    fig1.add_trace(go.Scatter(x=data['Date'], y=y_pred, mode='lines', name='Predicted Prices'))
+    graph1 = fig1.to_html(full_html=False)
 
-    return render_template('results.html', ticker=ticker, mae=mae, mse=mse, r2=r2, graph=graph)
+    # Visualization 2: Residuals Distribution
+    residuals = y - y_pred
+    fig2 = go.Figure()
+    fig2.add_trace(go.Histogram(x=residuals, nbinsx=30, name='Residuals'))
+    fig2.update_layout(title='Residuals Distribution', xaxis_title='Residuals', yaxis_title='Frequency')
+    graph2 = fig2.to_html(full_html=False)
+
+    # Visualization 3: Residuals vs Predicted Prices
+    fig3 = go.Figure()
+    fig3.add_trace(go.Scatter(x=y_pred, y=residuals, mode='markers', name='Residuals'))
+    fig3.update_layout(title='Residuals vs Predicted Prices', xaxis_title='Predicted Prices', yaxis_title='Residuals')
+    graph3 = fig3.to_html(full_html=False)
+
+    return render_template(
+        'results.html',
+        ticker=ticker,
+        mae=mae,
+        mse=mse,
+        r2=r2,
+        graph1=graph1,
+        graph2=graph2,
+        graph3=graph3
+    )
 
 def train_ticker_model(ticker):
     """
