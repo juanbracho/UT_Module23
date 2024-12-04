@@ -77,19 +77,20 @@ The **Stock Price Predictor** is a Flask-based web application that utilizes mac
 
 2. Ensure the following project structure
 
-📂 project-root/
-├── 📁 templates/      # HTML templates (Flask)
-│   ├── index.html     # Home page
-│   ├── results.html   # Results page
-│   └── about.html     # About page
-├── 📁 static/
-│   ├── 📁 css/
-│   │   └── styles.css # CSS styles for the project
-│   ├── 📁 js/
-│   │   └── script.js  # JavaScript functionality (e.g., spinner)
-├── app.py             # Main Flask app
-├── stocks_data.db     # SQLite database
-└── README.md          # Project documentation
+project-root/
+├── templates/            # HTML templates (Flask)
+│   ├── index.html        # Home page
+│   ├── results.html      # Results page
+│   └── about.html        # About page
+├── static/               # Static files
+│   ├── css/              # CSS styles
+│   │   └── styles.css    # CSS styles for the project
+│   └── js/               # JavaScript files
+│       └── script.js     # JavaScript functionality (e.g., spinner)
+├── app.py                # Main Flask app
+├── stocks_data.db        # SQLite database
+└── README.md             # Project documentation
+
 
 
 ## How to Run
