@@ -19,6 +19,13 @@ MODELS_PATH = 'models/'
 # Default ticker
 DEFAULT_TICKER = 'XOM'
 
+app = Flask(__name__, static_url_path='/static', static_folder='static')
+
+# Route to serve static files
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(app.static_folder, filename)
+
 @app.route('/')
 def index():
     # Fetch available tickers from the database
