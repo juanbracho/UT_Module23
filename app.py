@@ -62,7 +62,7 @@ def results():
     mse = mean_squared_error(y, y_pred)
     r2 = r2_score(y, y_pred)
 
-     # Generate visualizations using Plotly
+    # Generate visualizations using Plotly
     # Visualization 1: Actual vs Predicted Prices
     fig1 = go.Figure()
     fig1.add_trace(go.Scatter(x=data['Date'], y=data['Adj Close'], mode='lines', name='Actual Prices'))
