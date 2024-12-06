@@ -96,6 +96,7 @@ def results():
     fig3.add_trace(go.Scatter(x=y_pred, y=residuals, mode='markers', name='Residuals'))
     fig3.update_layout(title='Residuals vs Predicted Prices', xaxis_title='Predicted Prices', yaxis_title='Residuals')
     graph3 = fig3.to_html(full_html=False)
+    
 
     return render_template(
         'results.html',
