@@ -8,8 +8,9 @@ from keras.layers import LSTM, Dense
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split  # Add this import
 import plotly.graph_objects as go
+import numpy as np
 
 app = Flask(__name__)
 
@@ -20,6 +21,7 @@ MODELS_PATH = 'models/'
 # Default ticker and model type
 DEFAULT_TICKER = 'XOM'
 
+
 @app.route('/')
 def index():
     """
@@ -28,6 +30,7 @@ def index():
     with sqlite3.connect(DB_PATH) as conn:
         tickers = pd.read_sql("SELECT DISTINCT Ticker FROM processed_stocks", conn)['Ticker'].tolist()
     return render_template('index.html', tickers=tickers, default_ticker=DEFAULT_TICKER)
+
 
 @app.route('/results', methods=['POST'])
 def results():
@@ -55,22 +58,26 @@ def results():
             model = joblib.load(model_path)
         scaler = joblib.load(scaler_path)
 
-    # Fetch and preprocess data
+    # Fetch data for the selected ticker
     with sqlite3.connect(DB_PATH) as conn:
         query = f"SELECT * FROM processed_stocks WHERE Ticker = '{ticker}'"
         data = pd.read_sql(query, conn)
 
+    # Define features and target
     features = ['7-day MA', '14-day MA', 'Volatility', 'Lag_1', 'Lag_2']
-    X = data[features].values
-    X_scaled = scaler.transform(X)
+    target = 'Adj Close'
+    X_raw = data[features]
+    y_actual = data[target]
 
+    # Normalize features
     if model_type == 'lstm':
-        X_scaled = X_scaled.reshape(X_scaled.shape[0], 1, X_scaled.shape[1])
+        X_scaled = scaler.transform(X_raw)
+        X_input = X_scaled.reshape(X_scaled.shape[0], 1, X_scaled.shape[1])
+    else:
+        X_input = scaler.transform(X_raw)
 
-    y_actual = data['Adj Close'].values
-    y_pred = model.predict(X_scaled)
-    if model_type == 'lstm':
-        y_pred = y_pred.flatten()
+    # Make predictions
+    y_pred = model.predict(X_input).flatten()
 
     # Calculate evaluation metrics
     metrics = {
@@ -106,6 +113,7 @@ def results():
         graph3=graph3
     )
 
+
 def train_ticker_model(ticker, model_type):
     """
     Train and save an LSTM or Linear Regression model with scaler for the specified ticker.
@@ -125,6 +133,8 @@ def train_ticker_model(ticker, model_type):
         scaler = MinMaxScaler()
         X_train_scaled = scaler.fit_transform(X_train)
         X_test_scaled = scaler.transform(X_test)
+
+        # Reshape for LSTM input
         X_train_scaled = X_train_scaled.reshape(X_train_scaled.shape[0], 1, X_train_scaled.shape[1])
         X_test_scaled = X_test_scaled.reshape(X_test_scaled.shape[0], 1, X_test_scaled.shape[1])
 
@@ -154,12 +164,14 @@ def train_ticker_model(ticker, model_type):
     print(f"{model_type.upper()} model and scaler saved for {ticker}.")
     return model, scaler
 
+
 @app.route('/about')
 def about():
     """
     Renders the About page.
     """
     return render_template('about.html')
+
 
 if __name__ == '__main__':
     if not os.path.exists(MODELS_PATH):
