@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Stock Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Stock Predictor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">About the Stock Predictor Project</h1>
+
+        <section class="mb-5">
+            <h2>About the Project</h2>
+            <p>
+                This project is part of the University of Texas at Austin Data Analytics Bootcamp and serves as the fourth project
+                in the curriculum. The goal is to showcase end-to-end data analysis and machine learning concepts through a
+                stock price prediction web application.
+            </p>
+        </section>
+
+        <section class="mb-5">
+            <h2>Project Requirements</h2>
+            <ul>
+                <li>Use machine learning (Linear Regression with scikit-learn).</li>
+                <li>Use at least two additional technologies (e.g., Pandas, Matplotlib, SQLite, Flask).</li>
+                <li>Dataset with at least 100 records (stock data for multiple companies).</li>
+                <li>Provide interactive features like dropdown selection and visualizations.</li>
+            </ul>
+        </section>
+
+        <section class="mb-5">
+            <h2>Steps Taken</h2>
+            <ol>
+                <li><strong>Data Fetching:</strong> Raw stock data is fetched from the Yahoo Finance API and stored in an SQLite database.</li>
+                <li><strong>Data Preprocessing:</strong> The data is cleaned, and features are engineered for machine learning.</li>
+                <li><strong>Model Training:</strong> A Linear Regression model is trained to predict stock prices.</li>
+                <li><strong>Model Evaluation:</strong> The model is evaluated with metrics and visualizations.</li>
+                <li><strong>Flask Integration:</strong> A web app is built to interact with the machine learning model and display results.</li>
+            </ol>
+        </section>
+
+        <section class="mb-5">
+            <h2>Website Functionality</h2>
+            <ul>
+                <li><strong>Home Page:</strong> Allows the user to select a stock ticker from a dropdown menu.</li>
+                <li><strong>Results Page:</strong> Displays predictions, evaluation metrics, and visualizations.</li>
+                <li><strong>Navigation Bar:</strong> Links to Home, About, and Contact pages.</li>
+            </ul>
+        </section>
+
+        <section class="mb-5">
+            <h2>Repository Structure</h2>
+            <pre>
+/notebooks/       # Jupyter notebooks for data fetching, preprocessing, modeling, and evaluation
+/static/          # CSS and JS files for styling and interactivity
+/templates/       # HTML templates for Flask routes
+app.py            # Flask application logic
+requirements.txt  # List of dependencies
+stocks_data.db    # SQLite database
+            </pre>
+        </section>
+
+        <section class="mb-5">
+            <h2>How to Run the App</h2>
+            <ol>
+                <li>Clone the repository.</li>
+                <li>Install dependencies: <code>pip install -r requirements.txt</code>.</li>
+                <li>Run the app: <code>python app.py</code>.</li>
+                <li>Access the app at <a href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a>.</li>
+            </ol>
+        </section>
+
+        <section class="mb-5">
+            <h2>Graphs and Results</h2>
+            <ul>
+                <li><strong>Actual vs Predicted Prices:</strong> Line plot comparing actual stock prices and predictions.</li>
+                <li><strong>Residual Distribution:</strong> Histogram showing the error distribution of the predictions.</li>
+                <li><strong>Metrics Table:</strong> Includes Mean Absolute Error, Mean Squared Error, and R-squared values.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <p>
+                This project demonstrates the integration of data analysis, machine learning, and web development to build an interactive
+                stock price prediction tool. It provides a robust foundation for exploring real-world data problems and solutions.
+            </p>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        Stock Predictor &copy; 2024. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
