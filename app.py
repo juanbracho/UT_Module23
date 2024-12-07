@@ -6,6 +6,7 @@ import sqlite3
 import os
 from keras.models import Sequential, load_model
 from keras.layers import LSTM, Dense
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
@@ -39,12 +40,8 @@ def results():
     model_type = request.form.get('model_type', 'lstm')
 
     # Define paths for the model and scaler
-    if model_type == 'lstm':
-        model_path = os.path.join(MODELS_PATH, f"model_{ticker}_lstm.h5")
-        scaler_path = os.path.join(MODELS_PATH, f"scaler_{ticker}_lstm.pkl")
-    else:
-        model_path = os.path.join(MODELS_PATH, f"model_{ticker}_linear.pkl")
-        scaler_path = os.path.join(MODELS_PATH, f"scaler_{ticker}_linear.pkl")
+    model_path = os.path.join(MODELS_PATH, f"model_{ticker}_{model_type}.pkl" if model_type == 'rf' else f"model_{ticker}_{model_type}.h5")
+    scaler_path = os.path.join(MODELS_PATH, f"scaler_{ticker}_{model_type}.pkl")
 
     # Load or train the selected model
     if not os.path.exists(model_path) or not os.path.exists(scaler_path):
@@ -70,7 +67,7 @@ def results():
 
     y_actual = data['Adj Close'].values
     y_pred = model.predict(X_scaled)
-    if model_type == 'lstm':
+    if model_type == 'lstm' or model_type == 'rf':
         y_pred = y_pred.flatten()
 
     # Calculate evaluation metrics
@@ -96,7 +93,6 @@ def results():
     fig3.add_trace(go.Scatter(x=y_pred, y=residuals, mode='markers', name='Residuals'))
     fig3.update_layout(title='Residuals vs Predicted Prices', xaxis_title='Predicted Prices', yaxis_title='Residuals')
     graph3 = fig3.to_html(full_html=False)
-    
 
     return render_template(
         'results.html',
@@ -110,7 +106,7 @@ def results():
 
 def train_ticker_model(ticker, model_type):
     """
-    Train and save an LSTM or Linear Regression model with scaler for the specified ticker.
+    Train and save an LSTM, Linear Regression, or Random Forest model with scaler for the specified ticker.
     """
     with sqlite3.connect(DB_PATH) as conn:
         query = f"SELECT * FROM processed_stocks WHERE Ticker = '{ticker}'"
@@ -139,6 +135,18 @@ def train_ticker_model(ticker, model_type):
         model_path = os.path.join(MODELS_PATH, f"model_{ticker}_lstm.h5")
         scaler_path = os.path.join(MODELS_PATH, f"scaler_{ticker}_lstm.pkl")
         model.save(model_path)
+
+    elif model_type == 'rf':
+        scaler = StandardScaler()
+        X_train_scaled = scaler.fit_transform(X_train)
+        X_test_scaled = scaler.transform(X_test)
+
+        model = RandomForestRegressor(n_estimators=100, random_state=42)
+        model.fit(X_train_scaled, y_train)
+
+        model_path = os.path.join(MODELS_PATH, f"model_{ticker}_rf.pkl")
+        scaler_path = os.path.join(MODELS_PATH, f"scaler_{ticker}_rf.pkl")
+        joblib.dump(model, model_path)
 
     else:
         scaler = StandardScaler()
