@@ -33,13 +33,18 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    margin: 20px auto; /* Add auto centering and spacing */
+    max-width: 1200px; /* Constrain the graph section to a reasonable width */
 }
 
 .graph-section {
-    min-width: 650px; /* Minimum width for graphs */
-    flex: 1 1 45%; /* Allows the graphs to adjust based on screen size */
-    text-align: center;
+    min-width: 600px; /* Adjust minimum width for better display */
+    max-width: 100%;  /* Ensure it doesn't overflow on smaller screens */
+    flex: 1 1 45%;    /* Retain flexibility */
+    padding: 10px;    /* Add padding for separation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a polished look */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    background: #fff;   /* Ensure a consistent background color */
 }
 
 /* Ensure graphs and metrics adapt for smaller screens */
