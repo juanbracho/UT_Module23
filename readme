@@ -55,10 +55,30 @@ To address these questions, the project follows a structured methodology, combin
 
 4. Model Evaluation
 	Metrics:
-	• Mean Squared Error (MSE)
-	• Root Mean Squared Error (RMSE)
-	• Mean Absolute Error (MAE)
-	• R² (Coefficient of Determination)
+	• Mean Squared Error (MSE):
+	 • Definition: 
+	   •Measures the average squared difference between actual and predicted values.
+	 • Significance:
+	   • Penalizes larger errors more heavily, making it useful for identifying models that struggle with significant deviations.
+	   • Lower MSE indicates better predictive accuracy.
+	 • Root Mean Squared Error (RMSE):
+	  • Definition: 
+	   • The square root of the Mean Squared Error, providing an error measure in the same units as the target variable.
+	  • Significance:
+	   • More interpretable than MSE because it is expressed in the same units as stock prices.
+	   • Lower RMSE reflects higher accuracy and minimal large errors.
+	• Mean Absolute Error (MAE):
+	 • Definition: 
+	  • The average absolute difference between actual and predicted values.
+	 • Significance:
+	  •Provides a linear scale of errors, giving equal weight to all deviations regardless of their magnitude.
+	  •Lower MAE indicates the model’s ability to provide consistent predictions close to the actual values.
+	• R² (Coefficient of Determination):
+	 • Definition: 
+	  • Represents the proportion of variance in the target variable that is explained by the model.
+	 •Significance:
+	  •Values range from 0 to 1, where higher values indicate better model fit.
+	  •A value close to 1 implies that the model explains a significant portion of the variability in stock prices.
 	Visualizations:
 	• Actual vs. Predicted stock prices.
 	• Residual distributions and scatter plots.
