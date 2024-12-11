@@ -332,7 +332,7 @@ This project leverages the following tools, programming languages, and platforms
 
     Programming Languages
 
-	•	Python: Primary language for data analysis, machine learning, and automation.
+	• Python: Primary language for data analysis, machine learning, and automation.
 
     Libraries and Frameworks
 
