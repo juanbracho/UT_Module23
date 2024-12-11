@@ -219,7 +219,7 @@ Sources:
 
 	• Added features include:	Moving Averages:
 
-		•	 7-day and 14-day moving averages to smooth out price fluctuations.
+		 7-day and 14-day moving averages to smooth out price fluctuations.
 
 	Volatility: 
 
@@ -239,7 +239,91 @@ LSTM (Long Short-Term Memory)
 
 Purpose:
 
-• Time-series model designed to capture sequential dependencies in stock price movements...
+• Time-series model designed to capture sequential dependencies in stock price movements.
+
+	Key Features: 
+
+	• Moving Averages (7-day, 14-day)
+
+	• Volatility
+
+	• Lagged values (Lag_1, Lag_2, etc.)
+
+	Model Details: 
+
+	• Optimized architecture with multiple layers of LSTM, dropout layers for regularization, and dense layers for output predictions.
+
+	• Predicts future stock prices using sequential data.
+
+Linear Regression
+
+	Purpose: 
+
+	• Baseline model to predict stock prices based on engineered features.
+
+	Key Features: 
+
+	• Moving Averages
+
+	• Volatility
+
+	• Lagged values
+
+	Model Details: 
+
+	• Simple linear regression to establish a benchmark for predictive accuracy.
+
+Random Forest
+
+	Purpose: 
+
+	• Ensemble model to capture complex, non-linear relationships between features.
+
+	Key Features: 
+
+	• Moving Averages
+
+	• Volatility
+
+	• Lagged values
+
+	Model Details:
+
+	• Ensemble learning with 100 decision trees for improved prediction stability.
+
+	• Feature importance analysis to identify key drivers of stock prices.
+
+2. Visualizations
+
+Prediction Accuracy
+
+	• Actual vs. Predicted Prices:
+
+	• Line charts comparing actual stock prices with model predictions for each ticker.
+
+	• Example: Visualization of Exxon Mobil (XOM) stock prices using LSTM predictions.
+
+	• Scatter Plot: Plots of actual vs. predicted values to assess the distribution of predictions.
+
+Residual Analysis
+
+	Histogram of Residuals:	
+	
+	• Displays the error distribution (difference between actual and predicted prices).
+
+	Residuals vs. Predicted: 
+
+	• Scatter plots showing patterns in residual errors, useful for identifying biases in model predictions.
+
+Feature Importance
+
+	Random Forest Feature Analysis:
+
+	• Bar chart highlighting the relative importance of features (e.g., moving averages, volatility).
+
+Model Comparison
+
+	• Performance Metrics: Bar charts or tables summarizing metrics like MSE, RMSE, MAE, and R² for all models.
 
 ## Technologies
 Programming Languages
