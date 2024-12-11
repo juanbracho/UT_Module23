@@ -97,31 +97,31 @@ Metrics:
 
 • Mean Squared Error (MSE):
 
-	 • Definition: 
+Definition: 
 
-	   Measures the average squared difference between actual and predicted values.
+• Measures the average squared difference between actual and predicted values.
 
-	 • Significance:
+Significance:
 
-	   • Penalizes larger errors more heavily, making it useful for identifying models that struggle with significant deviations.
+• Penalizes larger errors more heavily, making it useful for identifying models that struggle with significant deviations.
 
-	   • Lower MSE indicates better predictive accuracy.
+• Lower MSE indicates better predictive accuracy.
 
-	 • Root Mean Squared Error (RMSE):
+Root Mean Squared Error (RMSE):
 
-	  • Definition: 
+Definition: 
 
-	   • The square root of the Mean Squared Error, providing an error measure in the same units as the target variable.
+• The square root of the Mean Squared Error, providing an error measure in the same units as the target variable.
 
-	  • Significance:
+Significance:
 
-	   • More interpretable than MSE because it is expressed in the same units as stock prices.
+• More interpretable than MSE because it is expressed in the same units as stock prices.
 
-	   • Lower RMSE reflects higher accuracy and minimal large errors.
+• Lower RMSE reflects higher accuracy and minimal large errors.
 
-	• Mean Absolute Error (MAE):
+Mean Absolute Error (MAE):
 
-	 • Definition: 
+ Definition: 
 
 	  • The average absolute difference between actual and predicted values.
 
