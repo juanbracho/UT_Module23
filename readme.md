@@ -54,11 +54,15 @@ Approach
 To address these questions, the project follows a structured methodology, combining data collection, preprocessing, model development, and evaluation:
 
 1. Data Collection
+
 	Source: 
+
 	• Historical stock price data is fetched from Yahoo Finance using the yfinance library.
 	Scope: 
+
 	• The dataset includes features like adjusted closing prices, volume, and market indicators for selected companies.
 	Storage: 
+	
 	• Data is stored in an SQLite database for ease of access and future processing.
 
 2. Data Preprocessing
