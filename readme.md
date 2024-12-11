@@ -162,6 +162,7 @@ Comparison:
 ## Data Exploration Phase
 ### Data Retrieval
 Sources:
+
 • Historical stock price data is retrieved from Yahoo Finance using the yfinance Python library.
 
 • Stocks included in the analysis are selected for their market relevance, such as Exxon Mobil (XOM), Chevron (CVX), and others.
