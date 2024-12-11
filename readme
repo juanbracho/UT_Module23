@@ -2,7 +2,7 @@ Stock Price Prediction and Analysis
 
 Project Overview
 
-This project uses machine learning models to analyze and predict stock prices for various companies. The focus is on creating robust pipelines for data fetching, preprocessing, model training, and evaluation. The project includes multiple approaches, such as LSTM, Linear Regression, and Random Forest models, to assess prediction accuracy and efficiency.
+This project uses machine learning models to analyze and predict stock prices for various companies. The focus is on creating robust pipelines for data fetching, preprocessing, model training, and evaluation. The project includes multiple approaches, such as LSTM, Linear Regression, and Random Forest models, to assess prediction accuracy and efficiency.
 
 Background
 
@@ -27,28 +27,34 @@ Approach
 To address these questions, the project follows a structured methodology, combining data collection, preprocessing, model development, and evaluation:
 
 1. Data Collection
-	•	Source: Historical stock price data is fetched from Yahoo Finance using the yfinance library.
-	•	Scope: The dataset includes features like adjusted closing prices, volume, and market indicators for selected companies.
-	•	Storage: Data is stored in an SQLite database for ease of access and future processing.
+	Source: 
+	•	Historical stock price data is fetched from Yahoo Finance using the yfinance library.
+	Scope: 
+	•	The dataset includes features like adjusted closing prices, volume, and market indicators for selected companies.
+	Storage: 
+	•	Data is stored in an SQLite database for ease of access and future processing.
 
 2. Data Preprocessing
-	•	Cleaning: Handles missing values and filters out inconsistencies.
-	•	Feature Engineering: Constructs new features such as moving averages (7-day, 14-day), volatility, and lagged values.
-	•	Normalization: Scales features using MinMaxScaler or StandardScaler to prepare data for model input.
+	Cleaning: 
+	•	Handles missing values and filters out inconsistencies.
+	Feature Engineering: 
+	•	Constructs new features such as moving averages (7-day, 14-day), volatility, and lagged values.
+	Normalization: 
+	•	Scales features using MinMaxScaler or StandardScaler to prepare data for model input.
 
 3. Model Training
-	•	LSTM Models:
+	LSTM Models:
 	•	Trains long short-term memory (LSTM) models for time-series predictions.
 	•	Leverages sequential data to capture trends and patterns over time.
-	•	Linear Regression:
+	Linear Regression:
 	•	Implements traditional linear regression for baseline comparisons.
 	•	Trains models on engineered features to assess their contribution.
-	•	Random Forest Regressors:
+	Random Forest Regressors:
 	•	Utilizes ensemble learning to improve prediction stability and accuracy.
 	•	Captures non-linear relationships in the dataset.
 
 4. Model Evaluation
-	•	Metrics:
+	Metrics:
 	•	Mean Squared Error (MSE)
 	•	Root Mean Squared Error (RMSE)
 	•	Mean Absolute Error (MAE)
@@ -66,57 +72,78 @@ To address these questions, the project follows a structured methodology, combin
 Data Exploration Phase
 
 1. Data Retrieval
-	•	Sources: Historical stock price data is retrieved from Yahoo Finance using the yfinance Python library.
+	Sources: 
+	•	Historical stock price data is retrieved from Yahoo Finance using the yfinance Python library.
 	•	Stocks included in the analysis are selected for their market relevance, such as Exxon Mobil (XOM), Chevron (CVX), and others.
-	•	Methods: A Python script automates data fetching, using API calls to Yahoo Finance for daily stock price details, including Adj Close, Volume, and other financial metrics.
+	Methods: 
+	•	A Python script automates data fetching, using API calls to Yahoo Finance for daily stock price details, including Adj Close, Volume, and other financial metrics.
 	•	Data is downloaded in batches for each ticker and company, ensuring completeness and consistency.
 
 2. Database Design
-	•	Database Type: SQLite database was chosen for its simplicity and efficient handling of structured data.
-	•	Schema: The database contains a single table for raw stock data with the following columns:
-	•	Date: Date of the stock price.
-	•	Ticker: Stock ticker symbol (e.g., XOM for Exxon Mobil).
-	•	Adj Close: Adjusted closing price of the stock.
-	•	Volume: Number of shares traded.
-	•	Company: Full name of the company.
+	Database Type: 
+	•	SQLite database was chosen for its simplicity and efficient handling of structured data.
+	Schema: 
+	•	The database contains a single table for raw stock data with the following columns:
+	Date: 
+	•	Date of the stock price.
+	Ticker: 
+	•	Stock ticker symbol (e.g., XOM for Exxon Mobil).
+	Adj Close: 
+	•	Adjusted closing price of the stock.
+	Volume: 
+	•	Number of shares traded.
+	Company: 
+	•	Full name of the company.
 	•	Another table, processed_stocks, stores cleaned and preprocessed data, ready for analysis.
 	•	Advantages: The SQLite database enables rapid queries and facilitates seamless integration with data analysis workflows.
 
 3. Data Processing
-	•	Data Cleaning:
-		Missing values in critical fields (e.g., Adj Close) are removed.
-		Non-numeric values in price columns are coerced into numeric types, with errors handled gracefully.
-	•	Feature Engineering:
-		Added features include:	Moving Averages: 7-day and 14-day moving averages to smooth out price fluctuations.
-	•	Volatility: Captures daily price variations.
-	•	Lagged Features: Previous day’s (Lag_1, Lag_2, etc.) stock prices are included for predictive modeling.
-	•	Storage: The cleaned and engineered dataset is saved back into the SQLite database under a new table, processed_stocks.
+	Data Cleaning:
+	•	Missing values in critical fields (e.g., Adj Close) are removed.
+	•	Non-numeric values in price columns are coerced into numeric types, with errors handled gracefully.
+	Feature Engineering:
+	•	Added features include:	Moving Averages:
+		•	 7-day and 14-day moving averages to smooth out price fluctuations.
+	Volatility: 
+	•	Captures daily price variations.
+	Lagged Features: 
+	•	Previous day’s (Lag_1, Lag_2, etc.) stock prices are included for predictive modeling.
+	Storage: 
+	•	The cleaned and engineered dataset is saved back into the SQLite database under a new table, processed_stocks.
 
 Analysis Phase
 
 1. Machine Learning Models
 
 LSTM (Long Short-Term Memory)
-	•	Purpose: Time-series model designed to capture sequential dependencies in stock price movements.
-	•	Key Features: Moving Averages (7-day, 14-day)
+	Purpose: 
+	•	Time-series model designed to capture sequential dependencies in stock price movements.
+	Key Features: 
+	•	Moving Averages (7-day, 14-day)
 	•	Volatility
 	•	Lagged values (Lag_1, Lag_2, etc.)
-	•	Model Details: Optimized architecture with multiple layers of LSTM, dropout layers for regularization, and dense layers for output predictions.
+	Model Details: 
+	•	Optimized architecture with multiple layers of LSTM, dropout layers for regularization, and dense layers for output predictions.
 	•	Predicts future stock prices using sequential data.
 
 Linear Regression
-	•	Purpose: Baseline model to predict stock prices based on engineered features.
-	•	Key Features: Moving Averages
+	Purpose: 
+	•	Baseline model to predict stock prices based on engineered features.
+	Key Features: 
+	•	Moving Averages
 	•	Volatility
 	•	Lagged values
-	•	Model Details: Simple linear regression to establish a benchmark for predictive accuracy.
+	Model Details: 
+	•	Simple linear regression to establish a benchmark for predictive accuracy.
 
 Random Forest
-	•	Purpose: Ensemble model to capture complex, non-linear relationships between features.
-	•	Key Features: Moving Averages
+	Purpose: 
+	•	Ensemble model to capture complex, non-linear relationships between features.
+	Key Features: 
+	•	Moving Averages
 	•	Volatility
 	•	Lagged values
-	•	Model Details:
+	Model Details:
 	•	Ensemble learning with 100 decision trees for improved prediction stability.
 	•	Feature importance analysis to identify key drivers of stock prices.
 
@@ -129,11 +156,13 @@ Prediction Accuracy
 	•	Scatter Plot: Plots of actual vs. predicted values to assess the distribution of predictions.
 
 Residual Analysis
-	•	Histogram of Residuals:	Displays the error distribution (difference between actual and predicted prices).
-	•	Residuals vs. Predicted: Scatter plots showing patterns in residual errors, useful for identifying biases in model predictions.
+	Histogram of Residuals:	
+	•	Displays the error distribution (difference between actual and predicted prices).
+	Residuals vs. Predicted: 
+	•	Scatter plots showing patterns in residual errors, useful for identifying biases in model predictions.
 
 Feature Importance
-	•	Random Forest Feature Analysis:
+	Random Forest Feature Analysis:
 	•	Bar chart highlighting the relative importance of features (e.g., moving averages, volatility).
 
 Model Comparison
