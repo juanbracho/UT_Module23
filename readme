@@ -2,7 +2,7 @@ Stock Price Prediction and Analysis
 
 Project Overview
 
-This project uses machine learning models to analyze and predict stock prices for various companies. The focus is on creating robust pipelines for data fetching, preprocessing, model training, and evaluation. The project includes multiple approaches, such as LSTM, Linear Regression, and Random Forest models, to assess prediction accuracy and efficiency.
+This project uses machine learning models to analyze and predict stock prices for various companies. The focus is on creating robust pipelines for data fetching, preprocessing, model training, and evaluation. The project includes multiple approaches, such as LSTM, Linear Regression, and Random Forest models, to assess prediction accuracy and efficiency.
 
 Background
 
