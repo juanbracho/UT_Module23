@@ -127,10 +127,10 @@ def train_ticker_model(ticker, model_type):
         X_test_scaled = X_test_scaled.reshape(X_test_scaled.shape[0], 1, X_test_scaled.shape[1])
 
         model = Sequential()
-        model.add(LSTM(32, input_shape=(1, X_train_scaled.shape[2]), activation='relu'))
+        model.add(LSTM(264, input_shape=(1, X_train_scaled.shape[2]), activation='relu'))
         model.add(Dense(1))
         model.compile(optimizer='adam', loss='mean_squared_error')
-        model.fit(X_train_scaled, y_train, epochs=50, batch_size=128, validation_data=(X_test_scaled, y_test))
+        model.fit(X_train_scaled, y_train, epochs=50, batch_size=32, validation_data=(X_test_scaled, y_test))
 
         model_path = os.path.join(MODELS_PATH, f"model_{ticker}_lstm.h5")
         scaler_path = os.path.join(MODELS_PATH, f"scaler_{ticker}_lstm.pkl")
