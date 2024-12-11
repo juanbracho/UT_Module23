@@ -118,7 +118,7 @@ Metrics:
 
 	 • Definition: 
 
-	   • Measures the average squared difference between actual and predicted values.
+	   Measures the average squared difference between actual and predicted values.
 
 	 • Significance:
 
