@@ -235,11 +235,13 @@ Sources:
 
 ## Analysis Phase
 ### Machine Learning Models
+1. Machine Learning Models
+
 LSTM (Long Short-Term Memory)
 
-Purpose:
+	Purpose: 
 
-• Time-series model designed to capture sequential dependencies in stock price movements.
+	• Time-series model designed to capture sequential dependencies in stock price movements.
 
 	Key Features: 
 
@@ -255,9 +257,9 @@ Purpose:
 
 	• Predicts future stock prices using sequential data.
 
- Linear Regression
+Linear Regression
 
-	• Purpose: 
+	Purpose: 
 
 	• Baseline model to predict stock prices based on engineered features.
 
