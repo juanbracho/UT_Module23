@@ -255,7 +255,7 @@ Purpose:
 
 	• Predicts future stock prices using sequential data.
 
-Linear Regression
+ Linear Regression
 
 	• Purpose: 
 
