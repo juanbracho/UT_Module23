@@ -46,19 +46,19 @@ The selected companies include industry leaders, ensuring diverse representation
 
 Questions We Hope to Answer:
 
-	1. How accurately can stock prices be predicted using different machine learning models?
+1. How accurately can stock prices be predicted using different machine learning models?
 
-	2. What are the key features that influence stock price predictions?
+2. What are the key features that influence stock price predictions?
 
-	3. How do models like LSTM, Random Forest, and Linear Regression compare in performance for stock price forecasting?
+3. How do models like LSTM, Random Forest, and Linear Regression compare in performance for stock price forecasting?
 
-	4. Can engineered features such as moving averages and volatility improve prediction accuracy?
+4. Can engineered features such as moving averages and volatility improve prediction accuracy?
 
-	5. What trends or anomalies can be observed in historical stock data for specific companies?
+5. What trends or anomalies can be observed in historical stock data for specific companies?
 
-	6. What are the residual patterns and how can they inform improvements in model performance?
+6. What are the residual patterns and how can they inform improvements in model performance?
 
-	7. How does the prediction accuracy vary for different stock tickers and industries?
+7. How does the prediction accuracy vary for different stock tickers and industries?
 
 Approach
 
@@ -66,15 +66,15 @@ To address these questions, the project follows a structured methodology, combin
 
 1. Data Collection
 
-	Source: 
+Source: 
 
-	• Historical stock price data is fetched from Yahoo Finance using the yfinance library.
-	Scope: 
+• Historical stock price data is fetched from Yahoo Finance using the yfinance library.
+Scope: 
 
-	• The dataset includes features like adjusted closing prices, volume, and market indicators for selected companies.
-	Storage: 
+• The dataset includes features like adjusted closing prices, volume, and market indicators for selected companies.
+Storage: 
 
-	• Data is stored in an SQLite database for ease of access and future processing.
+• Data is stored in an SQLite database for ease of access and future processing.
 
 2. Data Preprocessing
 	Cleaning: 
