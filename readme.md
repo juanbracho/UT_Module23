@@ -35,11 +35,11 @@ Background
 
 The stock market is inherently volatile, and predicting stock prices has always been a challenge. This project aims to bridge the gap between data-driven insights and actionable predictions by leveraging machine learning. By exploring multiple algorithms and data features, this project seeks to:
 
-	1. Provide investors with tools to better anticipate stock price movements.
+1. Provide investors with tools to better anticipate stock price movements.
 
-	2. Showcase the effectiveness of different machine learning approaches, including time-series models like LSTM and traditional models like Random Forest and Linear Regression.
+2. Showcase the effectiveness of different machine learning approaches, including time-series models like LSTM and traditional models like Random Forest and Linear Regression.
 
-	3. Highlight trends and anomalies in historical stock data that can inform investment decisions.
+3. Highlight trends and anomalies in historical stock data that can inform investment decisions.
 
 
 The selected companies include industry leaders, ensuring diverse representation and meaningful insights across sectors. The project is designed to evolve into a robust prediction tool, offering scalability and adaptability for new data and models.
