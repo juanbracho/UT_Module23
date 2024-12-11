@@ -330,11 +330,11 @@ Sources:
 ## Technologies
 This project leverages the following tools, programming languages, and platforms:
 
-Programming Languages
+    Programming Languages
 
 	•	Python: Primary language for data analysis, machine learning, and automation.
 
-Libraries and Frameworks
+    Libraries and Frameworks
 
 	Data Handling:
 
@@ -366,7 +366,7 @@ Libraries and Frameworks
 
 	• yfinance: For fetching stock price data.
 
-Platforms and Tools
+    Platforms and Tools
 
 	Development:
 
@@ -381,4 +381,91 @@ Platforms and Tools
 	• Git and GitHub: For managing source code and collaboration.
 
 ## Summary of Model Performance
-This project explored three machine learning models—LSTM, Linear Regression, and Random Forest—to predict stock prices...
+This project explored three machine learning models—LSTM, Linear Regression, and Random Forest—to predict stock prices. Each model was evaluated based on its accuracy, robustness, and ability to generalize to unseen data. Below is a detailed comparison:
+
+1. Linear Regression
+
+	Strengths:
+
+	• Provides a baseline performance for stock price predictions.
+
+	• Simplicity and interpretability make it suitable for quick comparisons.
+
+	Weaknesses:
+
+	• Struggles with non-linear relationships inherent in stock price data.
+
+	• Limited ability to capture temporal dependencies or complex patterns.
+
+	Performance:
+
+	• Achieved moderate accuracy on engineered features like moving averages and lagged values.
+
+	Metrics:
+
+	• RMSE: Higher compared to the other models.
+
+	• R²: Moderate fit, highlighting its limitations in this context.
+
+2. Random Forest
+
+	Strengths:
+
+	• Handles non-linear relationships effectively and performs feature importance analysis.
+
+	• Robust to overfitting due to ensemble learning.
+
+	Weaknesses:
+
+	• Computationally intensive compared to Linear Regression.
+
+	• Limited in capturing sequential dependencies in time-series data.
+
+	Performance:
+
+	• Outperformed Linear Regression in predicting stock prices.
+
+	Metrics:
+
+	• RMSE: Lower than Linear Regression but higher than LSTM.
+
+	• R²: High fit, with good generalization to unseen data.
+
+
+3. LSTM (Long Short-Term Memory)
+
+	Strengths:
+
+	• Specifically designed for time-series data, capturing sequential dependencies and trends.
+
+	• Handles long-term dependencies effectively, making it ideal for stock price prediction.
+
+	Weaknesses:
+
+	• Computationally expensive to train and tune.
+
+	• Requires extensive preprocessing and normalization for optimal performance.
+
+	Performance:
+
+	• Outperformed both Linear Regression and Random Forest models.
+
+	Metrics:
+
+	• RMSE: Lowest among all models, indicating high accuracy.
+
+	• R²: Near-perfect fit for most stock tickers, showcasing its predictive power.
+
+Overall Performance
+
+	• Most Effective Model: LSTM
+
+	• The LSTM model demonstrated superior performance due to its ability to model temporal dependencies and capture patterns in sequential data.
+
+	Implications:
+
+	• LSTM models are highly effective for stock price predictions, particularly when historical trends and sequential data are critical.
+
+	• While they require more computational resources and preprocessing, the trade-off is justified by their accuracy and robustness.
+
+	• Investors and financial analysts could leverage LSTM models to develop predictive tools for decision-making and risk management.
