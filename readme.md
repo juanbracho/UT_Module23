@@ -257,7 +257,7 @@ Sources:
 
 	• Predicts future stock prices using sequential data.
 
-Linear Regression
+    Linear Regression
 
 	Purpose: 
 
@@ -275,7 +275,7 @@ Linear Regression
 
 	• Simple linear regression to establish a benchmark for predictive accuracy.
 
-Random Forest
+    Random Forest
 
 	Purpose: 
 
@@ -297,7 +297,7 @@ Random Forest
 
 2. Visualizations
 
-Prediction Accuracy
+    Prediction Accuracy
 
 	• Actual vs. Predicted Prices:
 
@@ -307,7 +307,7 @@ Prediction Accuracy
 
 	• Scatter Plot: Plots of actual vs. predicted values to assess the distribution of predictions.
 
-Residual Analysis
+    Residual Analysis
 
 	Histogram of Residuals:	
 	
@@ -317,20 +317,68 @@ Residual Analysis
 
 	• Scatter plots showing patterns in residual errors, useful for identifying biases in model predictions.
 
-Feature Importance
+    Feature Importance
 
 	Random Forest Feature Analysis:
 
 	• Bar chart highlighting the relative importance of features (e.g., moving averages, volatility).
 
-Model Comparison
+    Model Comparison
 
 	• Performance Metrics: Bar charts or tables summarizing metrics like MSE, RMSE, MAE, and R² for all models.
 
 ## Technologies
+This project leverages the following tools, programming languages, and platforms:
+
 Programming Languages
 
-• Python: Primary language for data analysis, machine learning, and automation...
+	•	Python: Primary language for data analysis, machine learning, and automation.
+
+Libraries and Frameworks
+
+	Data Handling:
+
+	• pandas: For data manipulation and analysis.
+
+	• numpy: For numerical operations.
+
+	• sqlite3: For database management.
+
+	Visualization:
+
+	• matplotlib: For creating static, interactive, and dynamic visualizations.
+
+	• seaborn: For statistical data visualization (where applicable).
+
+	Machine Learning:
+
+	• scikit-learn: For implementing Linear Regression and Random Forest models.
+
+	•  keras and tensorflow: For building and training LSTM models.
+
+	Feature Engineering:
+
+	• scikit-learn: For scaling and transforming data.
+
+	Miscellaneous:
+
+	• joblib: For saving and loading models and scalers.
+
+	• yfinance: For fetching stock price data.
+
+Platforms and Tools
+
+	Development:
+
+	• Jupyter Notebook: Interactive environment for creating and sharing code and outputs.
+
+	Data Storage:
+
+	• SQLite: Lightweight, file-based database for structured data.
+
+	Version Control:
+
+	• Git and GitHub: For managing source code and collaboration.
 
 ## Summary of Model Performance
 This project explored three machine learning models—LSTM, Linear Regression, and Random Forest—to predict stock prices...
