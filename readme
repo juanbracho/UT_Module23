@@ -66,37 +66,31 @@ To address these questions, the project follows a structured methodology, combin
 Data Exploration Phase
 
 1. Data Retrieval
-	•	Sources:
-	•	Historical stock price data is retrieved from Yahoo Finance using the yfinance Python library.
+	•	Sources: Historical stock price data is retrieved from Yahoo Finance using the yfinance Python library.
 	•	Stocks included in the analysis are selected for their market relevance, such as Exxon Mobil (XOM), Chevron (CVX), and others.
-	•	Methods:
-	•	A Python script automates data fetching, using API calls to Yahoo Finance for daily stock price details, including Adj Close, Volume, and other financial metrics.
+	•	Methods: A Python script automates data fetching, using API calls to Yahoo Finance for daily stock price details, including Adj Close, Volume, and other financial metrics.
 	•	Data is downloaded in batches for each ticker and company, ensuring completeness and consistency.
 
 2. Database Design
 	•	Database Type: SQLite database was chosen for its simplicity and efficient handling of structured data.
-	•	Schema:
-	•	The database contains a single table for raw stock data with the following columns:
+	•	Schema: The database contains a single table for raw stock data with the following columns:
 	•	Date: Date of the stock price.
 	•	Ticker: Stock ticker symbol (e.g., XOM for Exxon Mobil).
 	•	Adj Close: Adjusted closing price of the stock.
 	•	Volume: Number of shares traded.
 	•	Company: Full name of the company.
 	•	Another table, processed_stocks, stores cleaned and preprocessed data, ready for analysis.
-	•	Advantages:
-	•	The SQLite database enables rapid queries and facilitates seamless integration with data analysis workflows.
+	•	Advantages: The SQLite database enables rapid queries and facilitates seamless integration with data analysis workflows.
 
 3. Data Processing
 	•	Data Cleaning:
-	•	Missing values in critical fields (e.g., Adj Close) are removed.
-	•	Non-numeric values in price columns are coerced into numeric types, with errors handled gracefully.
+		Missing values in critical fields (e.g., Adj Close) are removed.
+		Non-numeric values in price columns are coerced into numeric types, with errors handled gracefully.
 	•	Feature Engineering:
-	•	Added features include:
-	•	Moving Averages: 7-day and 14-day moving averages to smooth out price fluctuations.
+		Added features include:	Moving Averages: 7-day and 14-day moving averages to smooth out price fluctuations.
 	•	Volatility: Captures daily price variations.
 	•	Lagged Features: Previous day’s (Lag_1, Lag_2, etc.) stock prices are included for predictive modeling.
-	•	Storage:
-	•	The cleaned and engineered dataset is saved back into the SQLite database under a new table, processed_stocks.
+	•	Storage: The cleaned and engineered dataset is saved back into the SQLite database under a new table, processed_stocks.
 
 Analysis Phase
 
@@ -104,28 +98,22 @@ Analysis Phase
 
 LSTM (Long Short-Term Memory)
 	•	Purpose: Time-series model designed to capture sequential dependencies in stock price movements.
-	•	Key Features:
-	•	Moving Averages (7-day, 14-day)
+	•	Key Features: Moving Averages (7-day, 14-day)
 	•	Volatility
 	•	Lagged values (Lag_1, Lag_2, etc.)
-	•	Model Details:
-	•	Optimized architecture with multiple layers of LSTM, dropout layers for regularization, and dense layers for output predictions.
-	•	Usage:
+	•	Model Details: Optimized architecture with multiple layers of LSTM, dropout layers for regularization, and dense layers for output predictions.
 	•	Predicts future stock prices using sequential data.
 
 Linear Regression
 	•	Purpose: Baseline model to predict stock prices based on engineered features.
-	•	Key Features:
-	•	Moving Averages
+	•	Key Features: Moving Averages
 	•	Volatility
 	•	Lagged values
-	•	Model Details:
-	•	Simple linear regression to establish a benchmark for predictive accuracy.
+	•	Model Details: Simple linear regression to establish a benchmark for predictive accuracy.
 
 Random Forest
 	•	Purpose: Ensemble model to capture complex, non-linear relationships between features.
-	•	Key Features:
-	•	Moving Averages
+	•	Key Features: Moving Averages
 	•	Volatility
 	•	Lagged values
 	•	Model Details:
@@ -138,22 +126,18 @@ Prediction Accuracy
 	•	Actual vs. Predicted Prices:
 	•	Line charts comparing actual stock prices with model predictions for each ticker.
 	•	Example: Visualization of Exxon Mobil (XOM) stock prices using LSTM predictions.
-	•	Scatter Plot:
-	•	Plots of actual vs. predicted values to assess the distribution of predictions.
+	•	Scatter Plot: Plots of actual vs. predicted values to assess the distribution of predictions.
 
 Residual Analysis
-	•	Histogram of Residuals:
-	•	Displays the error distribution (difference between actual and predicted prices).
-	•	Residuals vs. Predicted:
-	•	Scatter plots showing patterns in residual errors, useful for identifying biases in model predictions.
+	•	Histogram of Residuals:	Displays the error distribution (difference between actual and predicted prices).
+	•	Residuals vs. Predicted: Scatter plots showing patterns in residual errors, useful for identifying biases in model predictions.
 
 Feature Importance
 	•	Random Forest Feature Analysis:
 	•	Bar chart highlighting the relative importance of features (e.g., moving averages, volatility).
 
 Model Comparison
-	•	Performance Metrics:
-	•	Bar charts or tables summarizing metrics like MSE, RMSE, MAE, and R² for all models.
+	•	Performance Metrics: Bar charts or tables summarizing metrics like MSE, RMSE, MAE, and R² for all models.
 
 Technologies
 
@@ -163,7 +147,7 @@ Programming Languages
 	•	Python: Primary language for data analysis, machine learning, and automation.
 
 Libraries and Frameworks
-	•	Data Handling:
+	Data Handling:
 	•	pandas: For data manipulation and analysis.
 	•	numpy: For numerical operations.
 	•	sqlite3: For database management.
@@ -180,11 +164,11 @@ Libraries and Frameworks
 	•	yfinance: For fetching stock price data.
 
 Platforms and Tools
-	•	Development:
+	Development:
 	•	Jupyter Notebook: Interactive environment for creating and sharing code and outputs.
-	•	Data Storage:
+	Data Storage:
 	•	SQLite: Lightweight, file-based database for structured data.
-	•	Version Control:
+	Version Control:
 	•	Git and GitHub: For managing source code and collaboration.
 
 
@@ -193,48 +177,48 @@ Summary of Model Performance
 This project explored three machine learning models—LSTM, Linear Regression, and Random Forest—to predict stock prices. Each model was evaluated based on its accuracy, robustness, and ability to generalize to unseen data. Below is a detailed comparison:
 
 1. Linear Regression
-	•	Strengths:
+	Strengths:
 	•	Provides a baseline performance for stock price predictions.
 	•	Simplicity and interpretability make it suitable for quick comparisons.
-	•	Weaknesses:
+	Weaknesses:
 	•	Struggles with non-linear relationships inherent in stock price data.
 	•	Limited ability to capture temporal dependencies or complex patterns.
-	•	Performance:
+	Performance:
 	•	Achieved moderate accuracy on engineered features like moving averages and lagged values.
-	•	Metrics:
+	Metrics:
 	•	RMSE: Higher compared to the other models.
 	•	R²: Moderate fit, highlighting its limitations in this context.
 
 2. Random Forest
-	•	Strengths:
+	Strengths:
 	•	Handles non-linear relationships effectively and performs feature importance analysis.
 	•	Robust to overfitting due to ensemble learning.
-	•	Weaknesses:
+	Weaknesses:
 	•	Computationally intensive compared to Linear Regression.
 	•	Limited in capturing sequential dependencies in time-series data.
-	•	Performance:
+	Performance:
 	•	Outperformed Linear Regression in predicting stock prices.
-	•	Metrics:
+	Metrics:
 	•	RMSE: Lower than Linear Regression but higher than LSTM.
 	•	R²: High fit, with good generalization to unseen data.
 
 3. LSTM (Long Short-Term Memory)
-	•	Strengths:
+	Strengths:
 	•	Specifically designed for time-series data, capturing sequential dependencies and trends.
 	•	Handles long-term dependencies effectively, making it ideal for stock price prediction.
-	•	Weaknesses:
+	Weaknesses:
 	•	Computationally expensive to train and tune.
 	•	Requires extensive preprocessing and normalization for optimal performance.
-	•	Performance:
+	Performance:
 	•	Outperformed both Linear Regression and Random Forest models.
-	•	Metrics:
+	Metrics:
 	•	RMSE: Lowest among all models, indicating high accuracy.
 	•	R²: Near-perfect fit for most stock tickers, showcasing its predictive power.
 
 Overall Performance
 	•	Most Effective Model: LSTM
 	•	The LSTM model demonstrated superior performance due to its ability to model temporal dependencies and capture patterns in sequential data.
-	•	Implications:
+	Implications:
 	•	LSTM models are highly effective for stock price predictions, particularly when historical trends and sequential data are critical.
 	•	While they require more computational resources and preprocessing, the trade-off is justified by their accuracy and robustness.
 	•	Investors and financial analysts could leverage LSTM models to develop predictive tools for decision-making and risk management.
