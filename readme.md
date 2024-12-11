@@ -330,13 +330,13 @@ Sources:
 ## Technologies
 This project leverages the following tools, programming languages, and platforms:
 
-    Programming Languages
+1. Programming Languages
 
 	• Python: Primary language for data analysis, machine learning, and automation.
 
-    Libraries and Frameworks
+2. Libraries and Frameworks
 
-	Data Handling:
+    Data Handling:
 
 	• pandas: For data manipulation and analysis.
 
@@ -344,29 +344,29 @@ This project leverages the following tools, programming languages, and platforms
 
 	• sqlite3: For database management.
 
-	Visualization:
+3. Visualization:
 
 	• matplotlib: For creating static, interactive, and dynamic visualizations.
 
 	• seaborn: For statistical data visualization (where applicable).
 
-	Machine Learning:
+4. Machine Learning:
 
 	• scikit-learn: For implementing Linear Regression and Random Forest models.
 
 	•  keras and tensorflow: For building and training LSTM models.
 
-	Feature Engineering:
+5. Feature Engineering:
 
 	• scikit-learn: For scaling and transforming data.
 
-	Miscellaneous:
+6. Miscellaneous:
 
 	• joblib: For saving and loading models and scalers.
 
 	• yfinance: For fetching stock price data.
 
-    Platforms and Tools
+7. Platforms and Tools
 
 	Development:
 
@@ -458,14 +458,14 @@ This project explored three machine learning models—LSTM, Linear Regression, a
 
 Overall Performance
 
-	• Most Effective Model: LSTM
+• Most Effective Model: LSTM
 
-	• The LSTM model demonstrated superior performance due to its ability to model temporal dependencies and capture patterns in sequential data.
+• The LSTM model demonstrated superior performance due to its ability to model temporal dependencies and capture patterns in sequential data.
 
 	Implications:
 
-	• LSTM models are highly effective for stock price predictions, particularly when historical trends and sequential data are critical.
+• LSTM models are highly effective for stock price predictions, particularly when historical trends and sequential data are critical.
 
-	• While they require more computational resources and preprocessing, the trade-off is justified by their accuracy and robustness.
+• While they require more computational resources and preprocessing, the trade-off is justified by their accuracy and robustness.
 
-	• Investors and financial analysts could leverage LSTM models to develop predictive tools for decision-making and risk management.
+• Investors and financial analysts could leverage LSTM models to develop predictive tools for decision-making and risk management.
