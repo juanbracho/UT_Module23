@@ -147,7 +147,9 @@ Visualizations:
 
 • Actual vs. Predicted stock prices.
 
-	• Residual distributions and scatter plots.
+
+• Residual distributions and scatter plots.
+
 
 	Comparison:
 
