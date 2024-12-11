@@ -257,7 +257,7 @@ Purpose:
 
 Linear Regression
 
-	Purpose: 
+	• Purpose: 
 
 	• Baseline model to predict stock prices based on engineered features.
 
