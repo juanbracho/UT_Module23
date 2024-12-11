@@ -462,7 +462,7 @@ Overall Performance
 
 • The LSTM model demonstrated superior performance due to its ability to model temporal dependencies and capture patterns in sequential data.
 
-	Implications:
+Implications:
 
 • LSTM models are highly effective for stock price predictions, particularly when historical trends and sequential data are critical.
 
