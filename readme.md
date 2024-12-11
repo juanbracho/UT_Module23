@@ -107,7 +107,7 @@ Significance:
 
 • Lower MSE indicates better predictive accuracy.
 
-Root Mean Squared Error (RMSE):
+• Root Mean Squared Error (RMSE):
 
 Definition: 
 
@@ -119,32 +119,33 @@ Significance:
 
 • Lower RMSE reflects higher accuracy and minimal large errors.
 
-Mean Absolute Error (MAE):
+• Mean Absolute Error (MAE):
 
- Definition: 
+Definition: 
 
-	  • The average absolute difference between actual and predicted values.
+• The average absolute difference between actual and predicted values.
 
-	 • Significance:
+Significance:
 
-	  •Provides a linear scale of errors, giving equal weight to all deviations regardless of their magnitude.
+• Provides a linear scale of errors, giving equal weight to all deviations regardless of their magnitude.
 
-	  •Lower MAE indicates the model’s ability to provide consistent predictions close to the actual values.
+• Lower MAE indicates the model’s ability to provide consistent predictions close to the actual values.
 
-	• R² (Coefficient of Determination):
+• R² (Coefficient of Determination):
 
-	 • Definition: 
+Definition: 
 
-	  • Represents the proportion of variance in the target variable that is explained by the model.
+• Represents the proportion of variance in the target variable that is explained by the model.
 
-	 •Significance:
+Significance:
 
-	  •Values range from 0 to 1, where higher values indicate better model fit.
+• Values range from 0 to 1, where higher values indicate better model fit.
 
-	  •A value close to 1 implies that the model explains a significant portion of the variability in stock prices.
-	Visualizations:
+• A value close to 1 implies that the model explains a significant portion of the variability in stock prices.
 
-	• Actual vs. Predicted stock prices.
+Visualizations:
+
+• Actual vs. Predicted stock prices.
 
 	• Residual distributions and scatter plots.
 
