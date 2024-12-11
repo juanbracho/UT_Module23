@@ -147,33 +147,102 @@ Visualizations:
 
 • Actual vs. Predicted stock prices.
 
-
 • Residual distributions and scatter plots.
 
+Comparison:
 
-	Comparison:
-
-	• Evaluates and compares models to identify strengths and weaknesses.
+• Evaluates and compares models to identify strengths and weaknesses.
 
 5. Iterative Refinement
 
-	• Incorporates findings from evaluations to refine feature engineering and hyperparameters for improved performance.
+• Incorporates findings from evaluations to refine feature engineering and hyperparameters for improved performance.
 
-	• Saves trained models and scalers for deployment or further testing.
+• Saves trained models and scalers for deployment or further testing.
 
 ## Data Exploration Phase
 ### Data Retrieval
 Sources:
-• Historical stock price data is retrieved from Yahoo Finance using the yfinance Python library...
+• Historical stock price data is retrieved from Yahoo Finance using the yfinance Python library.
+
+• Stocks included in the analysis are selected for their market relevance, such as Exxon Mobil (XOM), Chevron (CVX), and others.
+
+Methods: 
+
+• A Python script automates data fetching, using API calls to Yahoo Finance for daily stock price details, including Adj Close, Volume, and other financial metrics.
+
+• Data is downloaded in batches for each ticker and company, ensuring completeness and consistency.
+
+2. Database Design
+
+	Database Type: 
+
+	• SQLite database was chosen for its simplicity and efficient handling of structured data.
+
+	Schema: 
+
+	• The database contains a single table for raw stock data with the following columns:
+
+	Date: 
+
+	• Date of the stock price.
+
+	Ticker: 
+
+	• Stock ticker symbol (e.g., XOM for Exxon Mobil).
+
+	Adj Close: 
+
+	• Adjusted closing price of the stock.
+
+	Volume: 
+
+	• Number of shares traded.
+
+	Company: 
+
+	• Full name of the company.
+
+	• Another table, processed_stocks, stores cleaned and preprocessed data, ready for analysis.
+
+	• Advantages: The SQLite database enables rapid queries and facilitates seamless integration with data analysis workflows.
+
+3. Data Processing
+
+	Data Cleaning:
+
+	• Missing values in critical fields (e.g., Adj Close) are removed.
+
+	• Non-numeric values in price columns are coerced into numeric types, with errors handled gracefully.
+
+	Feature Engineering:
+
+	• Added features include:	Moving Averages:
+
+		•	 7-day and 14-day moving averages to smooth out price fluctuations.
+
+	Volatility: 
+
+	• Captures daily price variations.
+
+	Lagged Features: 
+
+	• Previous day’s (Lag_1, Lag_2, etc.) stock prices are included for predictive modeling.
+
+	Storage: 
+
+	• The cleaned and engineered dataset is saved back into the SQLite database under a new table, processed_stocks.
 
 ## Analysis Phase
 ### Machine Learning Models
 LSTM (Long Short-Term Memory)
+
 Purpose:
+
 • Time-series model designed to capture sequential dependencies in stock price movements...
 
 ## Technologies
 Programming Languages
+
 • Python: Primary language for data analysis, machine learning, and automation...
 
 ## Summary of Model Performance
