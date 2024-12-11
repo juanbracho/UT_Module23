@@ -77,47 +77,48 @@ Storage:
 • Data is stored in an SQLite database for ease of access and future processing.
 
 2. Data Preprocessing
-	Cleaning: 
 
-	• Handles missing values and filters out inconsistencies.
+Cleaning: 
 
-	Feature Engineering: 
+• Handles missing values and filters out inconsistencies.
 
-	• Constructs new features such as moving averages (7-day, 14-day), volatility, and lagged values.
+Feature Engineering: 
 
-	Normalization: 
+• Constructs new features such as moving averages (7-day, 14-day), volatility, and lagged values.
 
-	• Scales features using MinMaxScaler or StandardScaler to prepare data for model input.
+Normalization: 
+
+• Scales features using MinMaxScaler or StandardScaler to prepare data for model input.
 
 3. Model Training
 
-	LSTM Models:
+LSTM Models:
 
-	• Trains long short-term memory (LSTM) models for time-series predictions.
+• Trains long short-term memory (LSTM) models for time-series predictions.
 
-	• Leverages sequential data to capture trends and patterns over time.
+• Leverages sequential data to capture trends and patterns over time.
 
-	Linear Regression:
+Linear Regression Models:
 
-	• Implements traditional linear regression for baseline comparisons.
+• Implements traditional linear regression for baseline comparisons.
 
-	• Trains models on engineered features to assess their contribution.
+• Trains models on engineered features to assess their contribution.
 
-	Random Forest Regressors:
+Random Forest Models:
 
-	• Utilizes ensemble learning to improve prediction stability and accuracy.
+• Utilizes ensemble learning to improve prediction stability and accuracy.
 
-	• Captures non-linear relationships in the dataset.
+• Captures non-linear relationships in the dataset.
 
 4. Model Evaluation
 
-	Metrics:
+Metrics:
 
-	• Mean Squared Error (MSE):
+• Mean Squared Error (MSE):
 
 	 • Definition: 
 
-	   •Measures the average squared difference between actual and predicted values.
+	   • Measures the average squared difference between actual and predicted values.
 
 	 • Significance:
 
