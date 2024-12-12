@@ -299,7 +299,7 @@ Sources:
 
     Prediction Accuracy
 
-	• Actual vs. Predicted Prices:
+	Actual vs. Predicted Prices:
 
 	• Line charts comparing actual stock prices with model predictions for each ticker.
 
