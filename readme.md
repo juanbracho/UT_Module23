@@ -317,15 +317,6 @@ Sources:
 
 	• Scatter plots showing patterns in residual errors, useful for identifying biases in model predictions.
 
-    Feature Importance
-
-	Random Forest Feature Analysis:
-
-	• Bar chart highlighting the relative importance of features (e.g., moving averages, volatility).
-
-    Model Comparison
-
-	• Performance Metrics: Bar charts or tables summarizing metrics like MSE, RMSE, MAE, and R² for all models.
 
 ## Technologies
 This project leverages the following tools, programming languages, and platforms:
