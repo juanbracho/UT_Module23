@@ -297,7 +297,7 @@ Model Details:
 
 ### 2. Visualizations
 
-# Prediction Accuracy
+## Prediction Accuracy
 
 Actual vs. Predicted Prices:
 
@@ -307,7 +307,7 @@ Actual vs. Predicted Prices:
 
 • Scatter Plot: Plots of actual vs. predicted values to assess the distribution of predictions.
 
-# Residual Analysis
+## Residual Analysis
 
 Histogram of Residuals:	
 	
