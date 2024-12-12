@@ -175,63 +175,63 @@ Sources:
 
 ### 2. Database Design
 
-	Database Type: 
+Database Type: 
 
-	• SQLite database was chosen for its simplicity and efficient handling of structured data.
+• SQLite database was chosen for its simplicity and efficient handling of structured data.
 
-	Schema: 
+Schema: 
 
-	• The database contains a single table for raw stock data with the following columns:
+• The database contains a single table for raw stock data with the following columns:
 
-	Date: 
+Date: 
 
-	• Date of the stock price.
+• Date of the stock price.
 
-	Ticker: 
+Ticker: 
 
-	• Stock ticker symbol (e.g., XOM for Exxon Mobil).
+• Stock ticker symbol (e.g., XOM for Exxon Mobil).
 
-	Adj Close: 
+Adj Close: 
 
-	• Adjusted closing price of the stock.
+• Adjusted closing price of the stock.
 
-	Volume: 
+Volume: 
 
-	• Number of shares traded.
+• Number of shares traded.
 
-	Company: 
+Company: 
 
-	• Full name of the company.
+• Full name of the company.
 
-	• Another table, processed_stocks, stores cleaned and preprocessed data, ready for analysis.
+• Another table, processed_stocks, stores cleaned and preprocessed data, ready for analysis.
 
-	• Advantages: The SQLite database enables rapid queries and facilitates seamless integration with data analysis workflows.
+• Advantages: The SQLite database enables rapid queries and facilitates seamless integration with data analysis workflows.
 
 ### 3. Data Processing
 
-	Data Cleaning:
+Data Cleaning:
 
-	• Missing values in critical fields (e.g., Adj Close) are removed.
+• Missing values in critical fields (e.g., Adj Close) are removed.
 
-	• Non-numeric values in price columns are coerced into numeric types, with errors handled gracefully.
+• Non-numeric values in price columns are coerced into numeric types, with errors handled gracefully.
 
-	Feature Engineering:
+Feature Engineering:
 
-	• Added features include:	Moving Averages:
+• Added features include:	Moving Averages:
 
-		 7-day and 14-day moving averages to smooth out price fluctuations.
+	 7-day and 14-day moving averages to smooth out price fluctuations.
 
-	Volatility: 
+Volatility: 
 
-	• Captures daily price variations.
+• Captures daily price variations.
 
-	Lagged Features: 
+Lagged Features: 
 
-	• Previous day’s (Lag_1, Lag_2, etc.) stock prices are included for predictive modeling.
+• Previous day’s (Lag_1, Lag_2, etc.) stock prices are included for predictive modeling.
 
-	Storage: 
+Storage: 
 
-	• The cleaned and engineered dataset is saved back into the SQLite database under a new table, processed_stocks.
+• The cleaned and engineered dataset is saved back into the SQLite database under a new table, processed_stocks.
 
 ## Analysis Phase
 ### Machine Learning Models
