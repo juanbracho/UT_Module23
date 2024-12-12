@@ -45,7 +45,7 @@ The selected companies include industry leaders, ensuring diverse representation
 ## Approach
 To address these questions, the project follows a structured methodology, combining data collection, preprocessing, model development, and evaluation:
 
-1. Data Collection
+### 1. Data Collection
 
 Source: 
 
@@ -57,7 +57,7 @@ Storage:
 
 • Data is stored in an SQLite database for ease of access and future processing.
 
-2. Data Preprocessing
+### 2. Data Preprocessing
 
 Cleaning: 
 
