@@ -317,7 +317,6 @@ Sources:
 
 	• Scatter plots showing patterns in residual errors, useful for identifying biases in model predictions.
 
-
 ## Technologies
 This project leverages the following tools, programming languages, and platforms:
 
