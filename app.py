@@ -6,6 +6,8 @@ import sqlite3
 import os
 from keras.models import Sequential, load_model
 from keras.layers import LSTM, Dense
+from keras.optimizers import Adam
+from keras.saving import register_keras_serializable
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
@@ -25,6 +27,31 @@ MODELS_PATH = 'models/'
 DEFAULT_TICKER = 'XOM'
 
 # Helpter functions
+
+# Register the custom MSE metric for Keras
+@register_keras_serializable()
+def mse(y_true, y_pred):
+    from keras.metrics import mean_squared_error
+    return mean_squared_error(y_true, y_pred)
+
+# Calculate Metrics
+def calculate_metrics(y_actual, y_pred):
+    """
+    Calculate evaluation metrics for the model predictions.
+
+    Parameters:
+        y_actual (numpy array or list): Actual target values.
+        y_pred (numpy array or list): Predicted target values.
+
+    Returns:
+        dict: A dictionary containing MSE, MAE, and R² metrics.
+    """
+    metrics = {
+        'mae': mean_absolute_error(y_actual, y_pred),
+        'mse': mean_squared_error(y_actual, y_pred),
+        'r2': r2_score(y_actual, y_pred)
+    }
+    return metrics
 
 # Fetch and Process Data
 def fetch_and_process_data(ticker):
@@ -52,7 +79,7 @@ def fetch_and_process_data(ticker):
         return None
 
 # Prepare Features and Labels
-def prepare_features_and_labels(data):
+def prepare_features_and_labels(data, features):
     features = ['7-day MA', '14-day MA', 'Volatility', 'Lag_1', 'Lag_2']
     labels = data['Adj Close'].values
     X = data[features].values
@@ -82,7 +109,7 @@ def load_or_train_model(ticker, model_type, features, labels):
                 LSTM(50, activation='relu', input_shape=(1, X_train_scaled.shape[1])),
                 Dense(1)
             ])
-            model.compile(optimizer='adam', loss='mse')
+            model.compile(optimizer=Adam(learning_rate=0.001), loss='mse', metrics=[mse])
             X_train_scaled = X_train_scaled.reshape((X_train_scaled.shape[0], 1, X_train_scaled.shape[1]))
             X_test_scaled = X_test_scaled.reshape((X_test_scaled.shape[0], 1, X_test_scaled.shape[1]))
             model.fit(X_train_scaled, y_train, epochs=10, batch_size=32, verbose=1)
@@ -96,13 +123,13 @@ def load_or_train_model(ticker, model_type, features, labels):
     else:
         print(f"Loading existing {model_type} model for {ticker}...")
         if model_type == 'lstm':
-            model = load_model(model_path)
+            model = load_model(model_path, custom_objects={"mse": mse})  # Ensure custom metric is registered
         else:
             model = joblib.load(model_path)
         scaler = joblib.load(scaler_path)
 
     return model, scaler
-
+    
 # Generate Visualizations
 def generate_visualizations(data, y_actual, y_pred):
     """
