@@ -169,9 +169,9 @@ Sources:
 
 ### 1. Methods 
 
-    • A Python script automates data fetching, using API calls to Yahoo Finance for daily stock price details, including Adj Close, Volume, and other financial metrics.
+• A Python script automates data fetching, using API calls to Yahoo Finance for daily stock price details, including Adj Close, Volume, and other financial metrics.
 
-    • Data is downloaded in batches for each ticker and company, ensuring completeness and consistency.
+ • Data is downloaded in batches for each ticker and company, ensuring completeness and consistency.
 
 ### 2. Database Design
 
