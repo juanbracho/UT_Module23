@@ -237,7 +237,7 @@ Storage:
 ### Machine Learning Models
 ### 1. Machine Learning Models
 
-    LSTM (Long Short-Term Memory)
+    • LSTM (Long Short-Term Memory)
 
 	Purpose: 
 
