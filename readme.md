@@ -375,76 +375,76 @@ This project explored three machine learning models—LSTM, Linear Regression, a
 
 ### 1. Linear Regression
 
-	Strengths:
+Strengths:
 
-	• Provides a baseline performance for stock price predictions.
+• Provides a baseline performance for stock price predictions.
 
-	• Simplicity and interpretability make it suitable for quick comparisons.
+• Simplicity and interpretability make it suitable for quick comparisons.
 
-	Weaknesses:
+Weaknesses:
 
-	• Struggles with non-linear relationships inherent in stock price data.
+• Struggles with non-linear relationships inherent in stock price data.
 
-	• Limited ability to capture temporal dependencies or complex patterns.
+• Limited ability to capture temporal dependencies or complex patterns.
 
-	Performance:
+Performance:
 
-	• Achieved moderate accuracy on engineered features like moving averages and lagged values.
+• Achieved moderate accuracy on engineered features like moving averages and lagged values.
 
-	Metrics:
+Metrics:
 
-	• RMSE: Higher compared to the other models.
+• RMSE: Higher compared to the other models.
 
-	• R²: Moderate fit, highlighting its limitations in this context.
+• R²: Moderate fit, highlighting its limitations in this context.
 
 ### 2. Random Forest
 
-	Strengths:
+Strengths:
 
-	• Handles non-linear relationships effectively and performs feature importance analysis.
+• Handles non-linear relationships effectively and performs feature importance analysis.
 
-	• Robust to overfitting due to ensemble learning.
+• Robust to overfitting due to ensemble learning.
 
-	Weaknesses:
+Weaknesses:
 
-	• Computationally intensive compared to Linear Regression.
+• Computationally intensive compared to Linear Regression.
 
-	• Limited in capturing sequential dependencies in time-series data.
+• Limited in capturing sequential dependencies in time-series data.
 
-	Performance:
+Performance:
 
-	• Outperformed Linear Regression in predicting stock prices.
+• Outperformed Linear Regression in predicting stock prices.
 
-	Metrics:
+Metrics:
 
-	• RMSE: Lower than Linear Regression but higher than LSTM.
+• RMSE: Lower than Linear Regression but higher than LSTM.
 
-	• R²: High fit, with good generalization to unseen data.
+• R²: High fit, with good generalization to unseen data.
 
 
 ### 3. LSTM (Long Short-Term Memory)
 
-	Strengths:
+Strengths:
 
-	• Specifically designed for time-series data, capturing sequential dependencies and trends.
+• Specifically designed for time-series data, capturing sequential dependencies and trends.
 
-	• Handles long-term dependencies effectively, making it ideal for stock price prediction.
+• Handles long-term dependencies effectively, making it ideal for stock price prediction.
 
-	Weaknesses:
+Weaknesses:
 
-	• Computationally expensive to train and tune.
+• Computationally expensive to train and tune.
 
-	• Requires extensive preprocessing and normalization for optimal performance.
+• Requires extensive preprocessing and normalization for optimal performance.
 
-	Performance:
+Performance:
 
-	• Outperformed both Linear Regression and Random Forest models.
+• Outperformed both Linear Regression and Random Forest models.
 
-	Metrics:
+Metrics:
 
-	• RMSE: Lowest among all models, indicating high accuracy.
+• RMSE: Lowest among all models, indicating high accuracy.
 
-	• R²: Near-perfect fit for most stock tickers, showcasing its predictive power.
+• R²: Near-perfect fit for most stock tickers, showcasing its predictive power.
 
 Overall Performance
 
