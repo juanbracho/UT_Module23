@@ -237,63 +237,63 @@ Storage:
 ### Machine Learning Models
 ### 1. Machine Learning Models
 
-    • LSTM (Long Short-Term Memory)
+• LSTM (Long Short-Term Memory)
 
-	Purpose: 
+Purpose: 
 
-	• Time-series model designed to capture sequential dependencies in stock price movements.
+• Time-series model designed to capture sequential dependencies in stock price movements.
 
-	Key Features: 
+Key Features: 
 
-	• Moving Averages (7-day, 14-day)
+• Moving Averages (7-day, 14-day)
 
-	• Volatility
+• Volatility
 
-	• Lagged values (Lag_1, Lag_2, etc.) i.e. prices from previous day, prices from two days ago, etc.
+• Lagged values (Lag_1, Lag_2, etc.) i.e. prices from previous day, prices from two days ago, etc.
 
-	Model Details: 
+Model Details: 
 
-	• Optimized architecture with multiple layers of LSTM, dropout layers for regularization, and dense layers for output predictions.
+• Optimized architecture with multiple layers of LSTM, dropout layers for regularization, and dense layers for output predictions.
 
-	• Predicts future stock prices using sequential data.
+• Predicts future stock prices using sequential data.
 
-    Linear Regression
+• Linear Regression
 
-	Purpose: 
+Purpose: 
 
-	• Baseline model to predict stock prices based on engineered features.
+• Baseline model to predict stock prices based on engineered features.
 
-	Key Features: 
+Key Features: 
 
-	• Moving Averages
+• Moving Averages
 
-	• Volatility
+• Volatility
 
-	• Lagged values
+• Lagged values
 
-	Model Details: 
+Model Details: 
 
-	• Simple linear regression to establish a benchmark for predictive accuracy.
+• Simple linear regression to establish a benchmark for predictive accuracy.
 
-    Random Forest
+• Random Forest
 
-	Purpose: 
+Purpose: 
 
-	• Ensemble model to capture complex, non-linear relationships between features.
+• Ensemble model to capture complex, non-linear relationships between features.
 
-	Key Features: 
+Key Features: 
 
-	• Moving Averages
+• Moving Averages
 
-	• Volatility
+• Volatility
 
-	• Lagged values
+• Lagged values
 
-	Model Details:
+Model Details:
 
-	• Ensemble learning with 100 decision trees for improved prediction stability.
+• Ensemble learning with 100 decision trees for improved prediction stability.
 
-	• Feature importance analysis to identify key drivers of stock prices.
+• Feature importance analysis to identify key drivers of stock prices.
 
 ### 2. Visualizations
 
