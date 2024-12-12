@@ -373,7 +373,7 @@ This project leverages the following tools, programming languages, and platforms
 ## Summary of Model Performance
 This project explored three machine learning models—LSTM, Linear Regression, and Random Forest—to predict stock prices. Each model was evaluated based on its accuracy, robustness, and ability to generalize to unseen data. Below is a detailed comparison:
 
-1. Linear Regression
+### 1. Linear Regression
 
 	Strengths:
 
@@ -397,7 +397,7 @@ This project explored three machine learning models—LSTM, Linear Regression, a
 
 	• R²: Moderate fit, highlighting its limitations in this context.
 
-2. Random Forest
+### 2. Random Forest
 
 	Strengths:
 
@@ -422,7 +422,7 @@ This project explored three machine learning models—LSTM, Linear Regression, a
 	• R²: High fit, with good generalization to unseen data.
 
 
-3. LSTM (Long Short-Term Memory)
+### 3. LSTM (Long Short-Term Memory)
 
 	Strengths:
 
