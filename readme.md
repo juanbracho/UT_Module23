@@ -249,7 +249,7 @@ Sources:
 
 	• Volatility
 
-	• Lagged values (Lag_1, Lag_2, etc.)
+	• Lagged values (Lag_1, Lag_2, etc.) i.e. prices from previous day, prices from two days ago, etc.
 
 	Model Details: 
 
