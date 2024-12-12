@@ -219,7 +219,7 @@ Feature Engineering:
 
 • Added features include:	Moving Averages:
 
-	7-day and 14-day moving averages to smooth out price fluctuations.
+	• 7-day and 14-day moving averages to smooth out price fluctuations.
 
 Volatility: 
 
