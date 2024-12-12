@@ -71,7 +71,7 @@ Normalization:
 
 • Scales features using MinMaxScaler or StandardScaler to prepare data for model input.
 
-3. Model Training
+### 3. Model Training
 
 LSTM Models:
 
@@ -91,7 +91,7 @@ Random Forest Models:
 
 • Captures non-linear relationships in the dataset.
 
-4. Model Evaluation
+### 4. Model Evaluation
 
 Metrics:
 
@@ -153,7 +153,7 @@ Comparison:
 
 • Evaluates and compares models to identify strengths and weaknesses.
 
-5. Iterative Refinement
+### 5. Iterative Refinement
 
 • Incorporates findings from evaluations to refine feature engineering and hyperparameters for improved performance.
 
@@ -167,13 +167,13 @@ Sources:
 
 • Stocks included in the analysis are selected for their market relevance, such as Exxon Mobil (XOM), Chevron (CVX), and others.
 
-1. Methods 
+### 1. Methods 
 
     • A Python script automates data fetching, using API calls to Yahoo Finance for daily stock price details, including Adj Close, Volume, and other financial metrics.
 
     • Data is downloaded in batches for each ticker and company, ensuring completeness and consistency.
 
-2. Database Design
+### 2. Database Design
 
 	Database Type: 
 
@@ -207,7 +207,7 @@ Sources:
 
 	• Advantages: The SQLite database enables rapid queries and facilitates seamless integration with data analysis workflows.
 
-3. Data Processing
+### 3. Data Processing
 
 	Data Cleaning:
 
@@ -235,7 +235,7 @@ Sources:
 
 ## Analysis Phase
 ### Machine Learning Models
-1. Machine Learning Models
+### 1. Machine Learning Models
 
     LSTM (Long Short-Term Memory)
 
@@ -295,7 +295,7 @@ Sources:
 
 	• Feature importance analysis to identify key drivers of stock prices.
 
-2. Visualizations
+### 2. Visualizations
 
     Prediction Accuracy
 
