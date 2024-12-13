@@ -33,7 +33,8 @@ The selected companies include industry leaders, ensuring diverse representation
 2. Install the necessary dependancies:
 
 	```bash 
-pip install -r requirements.txt
+	
+	pip install -r requirements.txt
 
 3. Open the Jupyter Notebook (e.g. data_fetching.ipynb) to follow along with the code and visualizations.
 
