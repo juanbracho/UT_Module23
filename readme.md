@@ -26,6 +26,17 @@ The stock market is inherently volatile, and predicting stock prices has always 
 
 The selected companies include industry leaders, ensuring diverse representation and meaningful insights across sectors. The project is designed to evolve into a robust prediction tool, offering scalability and adaptability for new data and models.
 
+## Setup Instructions
+
+1. Clone this repository or download the project files.
+
+2. Install the necessary dependancies:
+
+	```bash pip install -r requirements.txt
+
+3. Open the Jupyter Notebook (e.g. data_fetching.ipynb) to follow along with the code and visualizations.
+
+
 ## Questions We Hope to Answer:
 
 1. How accurately can stock prices be predicted using different machine learning models?
