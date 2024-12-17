@@ -471,4 +471,4 @@ Implications:
 
 • While they require more computational resources and preprocessing, the trade-off is justified by their accuracy and robustness.
 
-• Investors and financial analysts could leverage LSTM models to develop predictive tools for decision-making and risk management.
+• Investors and financial analysts could leverage LSTM models to develop predictive tools for decision-making and risk management. 
